@@ -80,7 +80,7 @@
         background-color: white;
         width: 325px;
         position: absolute;
-        top: -300px;
+        top: -350px;
         right: 10%;
         padding: 25px;
         border-radius: 15px;
@@ -158,14 +158,8 @@
     #cajaResult{
         right: 2%;
     }
-    body{
-        overflow-y: visible;
-    }
 }
 @media (min-width: 320px){
-    body{
-        overflow-y: visible;
-    }
     #back{
         width: 100%;
         height: 200%;
@@ -194,9 +188,6 @@
 }
 
 @media (min-width: 375px){
-    body{
-        overflow-y: visible;
-    }
     #back{
         width: 100%;
         height: 200%;
@@ -225,25 +216,16 @@
     }
 }
 @media (min-width: 420px){
-    body{
-        overflow-y: visible;
-    }
     #cajaResult{
         margin-right: 30px;
     }
 }
 @media (min-width: 425px){
-    body{
-        overflow-y: visible;
-    }
     #cajaResult{
         margin-right: 32px;
     }
 }
 @media (min-width: 768){
-    body{
-        overflow-y: visible;
-    }
     #cajaResult{
         margin-left: 15px;
     }
