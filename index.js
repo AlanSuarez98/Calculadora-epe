@@ -14,7 +14,7 @@ function calcular() {
     var opciones = document.getElementsByName("usuario");
     var seleccionado = false;
     var valorSeleccionado = "";
-
+    //Se recorre los inputs radio y se toma el valor
     for (var i = 0; i < opciones.length; i++) {
         if (opciones[i].checked) {
             seleccionado = true;
@@ -23,19 +23,21 @@ function calcular() {
         }
     }
 
-
+    //se verifica que hayan seleccionado algun input radio de lo contrario se le informa al usuario
     if (!seleccionado) {
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Tipo de usuario";
         advertencia.appendChild(nuevoElemento);
     }
+    //si el usuario no selecciona algun distrito se le informa del mismo
     if (zona2 == "null") {
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Zona de domicilio";
         advertencia.appendChild(nuevoElemento);
     }
+    //validar que el número de kWs sea válida y no sea negativo ni cero y se le informa al usuario
     let verificarCant = verificarCantidad.value;
     if (verificarCant <= 0 || verificarCant == "") {
         advertencia.style.visibility = "visible";
@@ -43,10 +45,7 @@ function calcular() {
         nuevoElemento.textContent = "-Cantidad kWh inválida";
         advertencia.appendChild(nuevoElemento);
     }
-    else{
-        advertencia.style.visibility = "hidden";
-    }
-
+    //Si los datos ingresados estan bien hacemos el calculo solicitado dependiendo la zona
     if (seleccionado && zona2 && verificarCant > 0) {
         if (valorSeleccionado == "residencial") {
             let iva = 0.21;
