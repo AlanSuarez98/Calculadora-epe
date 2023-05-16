@@ -19,6 +19,7 @@ function calcular() {
         if (opciones[i].checked) {
             seleccionado = true;
             valorSeleccionado = opciones[i].value;
+            console.log("Usuario " + valorSeleccionado);
             break;
         }
     }
@@ -29,6 +30,7 @@ function calcular() {
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Tipo de usuario";
         advertencia.appendChild(nuevoElemento);
+        console.log(seleccionado);
     }
     //si el usuario no selecciona algun distrito se le informa del mismo
     if (zona2 == "null") {
@@ -36,6 +38,7 @@ function calcular() {
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Zona de domicilio";
         advertencia.appendChild(nuevoElemento);
+        console.log(zona2);
     }
     //validar que el número de kWs sea válida y no sea negativo ni cero y se le informa al usuario
     let verificarCant = verificarCantidad.value;
@@ -44,23 +47,30 @@ function calcular() {
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Cantidad kWh inválida";
         advertencia.appendChild(nuevoElemento);
+        console.log(verificarCant);
     }
+    console.log("cantidad ", verificarCantidad.value);
     //Si los datos ingresados estan bien hacemos el calculo solicitado dependiendo la zona
     if (seleccionado && zona2 && verificarCant > 0) {
+        advertencia.style.visibility = "hidden";
         if (valorSeleccionado == "residencial") {
             let iva = 0.21;
             switch (zona2) {
                 case "centro":
                     calculo = costo + cantidad * 5.8 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "norte":
                     calculo = costo + cantidad * 5.6 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "sur":
                     calculo = costo + cantidad * 5.4 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "oeste":
                     calculo = costo + cantidad * 5.35 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
             }
         } else if (valorSeleccionado == "industrial") {
@@ -68,15 +78,19 @@ function calcular() {
             switch (zona2) {
                 case "centro":
                     calculo = costo + cantidad * 5.8 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "norte":
                     calculo = costo + cantidad * 5.6 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "sur":
                     calculo = costo + cantidad * 5.4 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
                 case "oeste":
                     calculo = costo + cantidad * 5.35 * (1 + iva);
+                    console.log("zona ", zona2);
                     break;
             }
         }
