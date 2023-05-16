@@ -5,146 +5,160 @@
     font-family: 'Poppins', sans-serif;
     cursor: default;
 }
-#button{
-    cursor: pointer;
-}
-body{
-    width: 100%;
-    height: fit-content;
-}
-#back{
-    width: 100%;
-    height: 100vh;
-    z-index: -2;
-    position: absolute;
-    background: url("Img/epe-localidades-aperturas-11052020.jpg");
-    background-size: cover;
-    filter: blur(0.4px);
-}
-#overlay{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    background-color: black;
-    opacity: 45%;
-    z-index: -1;
-}
-#cajaTitular{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-top: 50px;
-}
-#logo{
-    width: 120px;
-    padding-left: 10px;
-    filter: drop-shadow(2px 2px 3px black);
-}
-#titulo{
-    color: white;
-    text-shadow: 2px 2px 3px black;
-    cursor: default;
-}
-#sectionCalc{
-    margin-top: 50px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#cajaCalc{
-    background-color: white;
-    width: 225px;
-    border-radius: 15px;
-    border: 2px solid rgb(0,88,154);
-    box-shadow: 2px 2px 3px black;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#form{
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-}
-#form label,input{
-    margin: 10px 0px;
-}
-#cajaResult{
-    background-color: white;
-    width: 325px;
-    position: absolute;
-    top: 160px;
-    right: 10%;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 3px black;
-    border: 2px solid rgb(0,88,154);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    visibility: visible;
-}
-#logoFactura{
-    filter: invert();
-    height: 25px;
-}
-#div1{
-    background-color: rgba(0, 87, 154, 0.795);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-}
-#cajaResult div{
-    border: 1px solid black;
-    margin: 10px 0;
-    padding: 5px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-#cajaResult div p{
-    color: black;
-}
-#codigoQR{
-    width: 125px;
-    padding: 5px;
-    border: 1px solid rgb(0,88,154);
-    border-radius: 15px;
-}
-#advertencia{
-    background-color: red;
-    width: 350px;
-    position: absolute;
-    top: 165px;
-    left: 5%;
-    padding: 10px;
-    opacity: 75%;
-    border-radius: 15px;
-    box-shadow: 2px 2px 3px black;
-    visibility: visible;
-}
-#advertencia h2{
-    color: white;
-    text-shadow: 2px 2px 3px black;
-    font-size: 16px;
-}
-#advertencia p{
-    color: white;
-    font-size: 14px;
-    text-shadow: 2px 2px 3px black;
-    margin-top: 15px;
-}
-#s320{
-    visibility: hidden;
-}
-#s376{
-    visibility: hidden;
-}
 
+@media screen and (max-width: 1440px){
+
+    #button{
+        cursor: pointer;
+    }
+    body{
+        width: 100%;
+        height: 650px;
+        overflow-y: hidden;
+    }
+    #back{
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        position: absolute;
+        background: url("Img/epe-localidades-aperturas-11052020.jpg");
+        background-size: cover;
+        filter: blur(0.4px);
+    }
+    #overlay{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: black;
+        opacity: 45%;
+        z-index: -1;
+    }
+    #cajaTitular{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 50px;
+    }
+    #logo{
+        width: 120px;
+        padding-left: 10px;
+        filter: drop-shadow(2px 2px 3px black);
+    }
+    #titulo{
+        color: white;
+        text-shadow: 2px 2px 3px black;
+        cursor: default;
+    }
+    #sectionCalc{
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #cajaCalc{
+        background-color: white;
+        width: 225px;
+        border-radius: 15px;
+        border: 2px solid rgb(0,88,154);
+        box-shadow: 2px 2px 3px black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #form{
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    #form label,input{
+        margin: 10px 0px;
+    }
+    #cajaResult{
+        background-color: white;
+        width: 325px;
+        position: absolute;
+        top: -300px;
+        right: 10%;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 3px black;
+        border: 2px solid rgb(0,88,154);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+
+    }
+    #logoFactura{
+        filter: invert();
+        height: 25px;
+    }
+    #div1{
+        background-color: rgba(0, 87, 154, 0.795);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #cajaResult div{
+        border: 1px solid black;
+        margin: 10px 0;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+    }
+    #cajaResult div p{
+        color: black;
+    }
+    #codigoQR{
+        width: 125px;
+        padding: 5px;
+        border: 1px solid rgb(0,88,154);
+        border-radius: 15px;
+    }
+    #advertencia{
+        background-color: red;
+        width: 350px;
+        position: absolute;
+        top: 165px;
+        left: 5%;
+        padding: 10px;
+        opacity: 75%;
+        border-radius: 15px;
+        box-shadow: 2px 2px 3px black;
+        visibility: hidden;
+    }
+    #advertencia h2{
+        color: white;
+        text-shadow: 2px 2px 3px black;
+        font-size: 16px;
+    }
+    #advertencia p{
+        color: white;
+        font-size: 14px;
+        text-shadow: 2px 2px 3px black;
+        margin-top: 15px;
+    }
+    #sectionResult{
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;    
+    }
+}
+@media (min-width: 1024px){
+    #cajaResult{
+        right: 2%;
+    }
+}
 @media (min-width: 320px){
     #back{
         width: 100%;
@@ -161,25 +175,19 @@ body{
     #sectionResult{
         position: absolute;
         top: 450px;
-        max-width: 376px;
-        min-width: 320px;
+        width: 100%;
         height: fit-content;
         box-sizing: content-box;
         display: flex;
         justify-content: center;
     }
-    #s320{
-        visibility: visible;
-    }
-    #s376{
-        visibility: hidden;
-    }
-    
     #cajaResult{
         width: 225px;
+        margin-right: -10px;
     }
 }
-@media (min-width: 376px){
+
+@media (min-width: 375px){
     #back{
         width: 100%;
         height: 200%;
@@ -195,21 +203,30 @@ body{
     #sectionResult{
         position: absolute;
         top: 450px;
-        max-width: 376px;
-        min-width: 320px;
+        width: 100%;
         height: fit-content;
         box-sizing: content-box;
         display: flex;
         justify-content: center;
     }
-    #s320{
-        visibility: hidden;
-    }
-    #s376{
-        visibility: visible;
-    }
-    
     #cajaResult{
         width: 225px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+@media (min-width: 420px){
+    #cajaResult{
+        margin-right: 30px;
+    }
+}
+@media (min-width: 425px){
+    #cajaResult{
+        margin-right: 32px;
+    }
+}
+@media (min-width: 768){
+    #cajaResult{
+        margin-left: 15px;
     }
 }
