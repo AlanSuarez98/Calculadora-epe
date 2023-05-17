@@ -3,18 +3,26 @@ function resetear(){
 }
 
 function calcular() {
+    // Obtener los elemento del DOM correspondientes
     let zona = document.getElementById("domicilio");
     let zona2 = zona.value;
+
     let cantidad = parseInt(document.getElementById("cantidad").value);
     let verificarCantidad = document.getElementById("cantidad");
     let advertencia = document.getElementById("advertencia");
+
+    // Variable para almacenar el resultado del cálculo
     let calculo;
+
+    // Constante que representa el costo base
     const costo = 102;
 
+    // Obtener los elementos de radio button para el tipo de usuario
     var opciones = document.getElementsByName("usuario");
     var seleccionado = false;
     var valorSeleccionado = "";
-    //Se recorre los inputs radio y se toma el valor
+
+    // Recorrer los radio button y verificar si alguno ha sido seleccionado
     for (var i = 0; i < opciones.length; i++) {
         if (opciones[i].checked) {
             seleccionado = true;
@@ -24,52 +32,62 @@ function calcular() {
         }
     }
 
-    //se verifica que hayan seleccionado algun input radio de lo contrario se le informa al usuario
+    // Verificar si se ha seleccionado un tipo de usuario
     if (!seleccionado) {
+        // Mostrar advertencia y agregar un elemento de párrafo al DOM
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Tipo de usuario";
         advertencia.appendChild(nuevoElemento);
         console.log(seleccionado);
     }
-    //si el usuario no selecciona algun distrito se le informa del mismo
-    if (zona2 == "null") {
+
+    // Verificar si se ha seleccionado una zona de domicilio
+    if (zona2 == "null" || zona === "null") {
+        // Mostrar advertencia y agregar un elemento de párrafo al DOM
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Zona de domicilio";
         advertencia.appendChild(nuevoElemento);
         console.log(zona2);
     }
-    //validar que el número de kWs sea válida y no sea negativo ni cero y se le informa al usuario
+
+    // Obtener el valor de la cantidad ingresada y verificar si es inválido
     let verificarCant = verificarCantidad.value;
     if (verificarCant <= 0 || verificarCant == "") {
+        // Mostrar advertencia y agregar un elemento de párrafo al DOM
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
         nuevoElemento.textContent = "-Cantidad kWh inválida";
         advertencia.appendChild(nuevoElemento);
         console.log(verificarCant);
     }
+
     console.log("cantidad ", verificarCantidad.value);
-    //Si los datos ingresados estan bien hacemos el calculo solicitado dependiendo la zona
+
+    // Realizar el cálculo si se han seleccionado el tipo de usuario, la zona y la cantidad son válidos
     if (seleccionado && zona2 && verificarCant > 0) {
+        // Ocultar la advertencia
         advertencia.style.visibility = "hidden";
+
+        // Realizar el cálculo según el tipo de usuario y la zona seleccionada
         if (valorSeleccionado == "residencial") {
             let iva = 0.21;
             switch (zona2) {
                 case "centro":
-                    calculo = costo + cantidad * 5.8 * (1 + iva);
+                    calculo = costo + (cantidad * 5.8) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "norte":
-                    calculo = costo + cantidad * 5.6 * (1 + iva);
+                    calculo = costo + (cantidad * 5.6) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "sur":
-                    calculo = costo + cantidad * 5.4 * (1 + iva);
+                    calculo = costo + (cantidad * 5.4) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "oeste":
-                    calculo = costo + cantidad * 5.35 * (1 + iva);
+                    calculo = costo + (cantidad * 5.35) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
             }
@@ -77,31 +95,44 @@ function calcular() {
             let iva = 0.27;
             switch (zona2) {
                 case "centro":
-                    calculo = costo + cantidad * 5.8 * (1 + iva);
+                    calculo = costo + (cantidad * 5.8) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "norte":
-                    calculo = costo + cantidad * 5.6 * (1 + iva);
+                    calculo = costo + (cantidad * 5.6) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "sur":
-                    calculo = costo + cantidad * 5.4 * (1 + iva);
+                    calculo = costo + (cantidad * 5.4) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
                 case "oeste":
-                    calculo = costo + cantidad * 5.35 * (1 + iva);
+                    calculo = costo + (cantidad * 5.35) * (1 + iva);
                     console.log("zona ", zona2);
                     break;
             }
         }
-
-        // Mostrar los resultados en la sección "cajaResult"
-        document.getElementById("zona").textContent = zona2;
-        document.getElementById("kWs").textContent = cantidad;
-        document.getElementById("total").textContent = calculo.toFixed(2);
-        document.getElementById("usuario").textContent = valorSeleccionado;
-
-        // Mostrar la sección "cajaResult"
-        document.getElementById("cajaResult").style.visibility = "visible";
     }
+
+
+    // Mostrar los resultados en la sección "cajaResult"
+    document.getElementById("zona").textContent = zona2;
+    document.getElementById("kWs").textContent = cantidad;
+    document.getElementById("total").textContent = calculo.toFixed(2);
+    document.getElementById("usuario").textContent = valorSeleccionado;
+
+    // Mostrar la sección "cajaResult"
+    document.getElementById("cajaResult").style.visibility = "visible";
+
 }
+
+const button = document.getElementById("resetear");
+function verificarTamañoPantalla() {
+    if (window.innerWidth > 1024) {
+      button.style.visibility = "hidden"; // Ocultar el botón si el ancho de pantalla es menor a 768px
+    } else {
+      button.style.visibility = "visible"; // Mostrar el botón en caso contrario
+    }
+  }
+verificarTamañoPantalla();
+window.addEventListener('resize', verificarTamañoPantalla);
