@@ -43,7 +43,7 @@ function calcular() {
     }
 
     // Verificar si se ha seleccionado una zona de domicilio
-    if (zona2 == "null" || zona === "null") {
+    if (zona2 == "null") {
         // Mostrar advertencia y agregar un elemento de párrafo al DOM
         advertencia.style.visibility = "visible";
         var nuevoElemento = document.createElement("p");
