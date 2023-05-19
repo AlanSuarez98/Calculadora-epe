@@ -123,15 +123,27 @@ function calcular() {
 
     // Mostrar la sección "cajaResult"
     document.getElementById("cajaResult").style.visibility = "visible";
-
+    document.getElementById("resetear").style.visibility = "visible";
 }
+
+
+
+// Función que toma que verifica el tamaño de la pantalla y modifica el estilo del button dentro de cajaResult
 
 const button = document.getElementById("resetear");
 function verificarTamañoPantalla() {
     if (window.innerWidth > 1024) {
-      button.style.visibility = "hidden"; // Ocultar el botón si el ancho de pantalla es menor a 768px
+        button.style.visibility = "hidden"; // Ocultar el botón si el ancho de pantalla es menor a 768px
     } else {
-      button.style.visibility = "visible"; // Mostrar el botón en caso contrario
+        var cajaResult = document.getElementById("cajaResult");
+        var estilos = window.getComputedStyle(cajaResult);
+        //Valida que cajaResult tenga el estilo "visibility = visible" para colocarle el mismo estilo al button
+        if (estilos.getPropertyValue("visibility") == "visible"){
+            button.style.visibility = "visible";
+        }else {
+            button.style.visibility = "hidden";
+        }
+        
     }
   }
 verificarTamañoPantalla();
