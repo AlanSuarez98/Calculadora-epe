@@ -148,6 +148,8 @@ function resetear(){
     document.getElementById("cajaResult").style.visibility = "hidden";
     document.getElementById("resetear").style.visibility = "hidden";
 }
+//Función que al presionar la tecla ENTER llame a la función CALCULAR(); y haga los mismo que presionar
+//el button CALCULAR 
 function teclas(event){
     var keyCode = event.keyCode || event.which;
 
@@ -155,3 +157,9 @@ function teclas(event){
         calcular();
     }
 }
+//Función para cancelar el actualizado al presionar el ENTER estando el cursor en el input number
+document.getElementById("cantidad").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  });
