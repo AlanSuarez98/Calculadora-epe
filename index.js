@@ -1,7 +1,3 @@
-function resetear(){
-    window.location.reload();
-}
-
 function calcular() {
     // Obtener los elemento del DOM correspondientes
     let zona = document.getElementById("domicilio");
@@ -133,7 +129,7 @@ function calcular() {
 const button = document.getElementById("resetear");
 function verificarTamañoPantalla() {
     if (window.innerWidth > 1024) {
-        button.style.visibility = "hidden"; // Ocultar el botón si el ancho de pantalla es menor a 768px
+        button.style.visibility = "hidden !important"; // Ocultar el botón si el ancho de pantalla es menor a 768px
     } else {
         var cajaResult = document.getElementById("cajaResult");
         var estilos = window.getComputedStyle(cajaResult);
@@ -148,3 +144,14 @@ function verificarTamañoPantalla() {
   }
 verificarTamañoPantalla();
 window.addEventListener('resize', verificarTamañoPantalla);
+function resetear(){
+    document.getElementById("cajaResult").style.visibility = "hidden";
+    document.getElementById("resetear").style.visibility = "hidden";
+}
+function teclas(event){
+    var keyCode = event.keyCode || event.which;
+
+    if(keyCode === 13){
+        calcular();
+    }
+}
